@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faschingsklub Berthelsdorf</title>
+<meta name="description" content="Faschingsklub und Kulturklub Berthelsdorf/Erzg. – seit 1979.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf7;--card:#fff;--text:#1d2316;--muted:#5d6652;--green:#6a9a1f;--green-d:#4d7413;--red:#d62828;--line:#e6e8df;--soft:#f1f5e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14170f;--card:#1d2117;--text:#eef2e6;--muted:#a6af98;--green:#9ccc4a;--green-d:#b5dd6d;--red:#ff6b6b;--line:#2d3324;--soft:#232a1a}}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 16px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+.brand img{height:40px}
+.nav ul{display:flex;gap:4px;list-style:none;padding:0;margin-left:auto}
+.nav ul a{text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;font-size:.95rem;color:var(--muted)}
+.nav ul a:hover{background:var(--soft);color:var(--text)}
+#menu{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--text);font:inherit}
+@media(max-width:820px){#menu{display:block}.nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:8px 16px 16px;border-bottom:1px solid var(--line)}.nav ul.open{display:flex}}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:56px 0}
+.eyebrow{color:var(--green-d);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:12px 0 16px;letter-spacing:-.02em}
+h1 span{color:var(--red)}
+.lead{color:var(--muted);font-size:1.1rem;max-width:46ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none}
+.btn.primary{background:var(--green);color:#fff}
+.btn.ghost{border:1px solid var(--line)}
+.hero figure{position:relative}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px;display:block}
+.hero figcaption{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.6);color:#fff;font-size:.8rem;padding:4px 10px;border-radius:999px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding:32px 0;gap:24px}}
+section{padding:48px 0}
+h2{font-size:1.7rem;letter-spacing:-.01em;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+.card h3{font-size:1.3rem;margin:6px 0 12px}
+.card p{color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--green-d)}
+.link{display:inline-block;margin-top:16px;font-weight:600;color:var(--red);text-decoration:none}
+.kk{display:flex;flex-direction:column;gap:12px;background:var(--soft)}
+.kk img{width:90px;border-radius:12px}
+.timeline{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.timeline a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;transition:.2s}
+.timeline a:hover{border-color:var(--green);transform:translateY(-2px)}
+.timeline small{color:var(--green-d);font-weight:600}
+.timeline strong{display:block;margin-top:4px}
+.insta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(120deg,#833ab4,#fd1d1d,#fcb045);color:#fff;border-radius:20px;padding:32px}
+.insta h2{margin:0}
+.insta .btn{background:#fff;color:#111}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+<header><nav class="wrap nav">
+  <a class="brand" href="https://fkb-helau.de"><img src="https://fkb-helau.de/index_htm_files/22155.png" alt="FKB Logo">FKB helau!</a>
+  <button id="menu" aria-expanded="false" aria-controls="links">Menü</button>
+  <ul id="links">
+    <li><a href="https://fkb-helau.de/wir.htm">Wir</a></li>
+    <li><a href="https://fkb-helau.de/kulturklub.htm">Kulturklub</a></li>
+    <li><a href="https://fkb-helau.de/kapp%2026.htm">Auftakt 26-27</a></li>
+    <li><a href="https://fkb-helau.de/fasch26.htm">Fasching 26</a></li>
+    <li><a href="https://fkb-helau.de/funken.htm">Funken</a></li>
+    <li><a href="https://fkb-helau.de/Kontakt.htm">Kontakt</a></li>
+  </ul>
+</nav></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Seit 1979 · Berthelsdorf/Erzg.</div>
+      <h1>Willkommen beim Faschingsklub &amp; Kulturklub <span>Berthelsdorf</span></h1>
+      <p class="lead">Der Faschingsklub Berthelsdorf im Kulturverein der Gemeinde Weißenborn – Fasching, Maibaum- und Erntefeste.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://fkb-helau.de/kapp%2026.htm">Auftakt 2026/27 ansehen</a>
+        <a class="btn ghost" href="https://www.instagram.com/fkb.helau/">Instagram</a>
+      </div>
+    </div>
+    <figure><img src="https://fkb-helau.de/index_htm_files/22739.jpg" alt="Westernszene beim Faschingsprogramm"><figcaption>März 2025</figcaption></figure>
+  </div>
+
+  <section>
+    <h2>Aktuelles</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Auftakt 2026/27</span>
+        <h3>Berthelsdorf wird Westerndorf</h3>
+        <p>Richtig gut besucht war die erste Etappe unseres Programmes mit dem Schauplatz im wilden Westen. Im Video sahen die närrischen Gäste zunächst Goldsucher im Muldental. Diese fanden lediglich Fische, ein Indianer aber einen riesigen Klumpen Gold ohne zu wissen, was er damit anfangen sollte. Ein Fotograf vom „Daily Outpost“ sorgte mit dem Foto vom Gold für ein Extrablatt und anschließend (live auf dem Saal vom Schmiedestern) für Aufsehen in der Immobilienbranche. Zwei „Landverkäufer“ knobeln um die Verkaufsreviere…</p>
+        <a class="link" href="https://fkb-helau.de/kapp%2026.htm">Mehr im Extrablatt →</a>
+      </article>
+      <aside class="card kk">
+        <img src="https://fkb-helau.de/index_htm_files/20997.png" alt="Kulturklub Logo">
+        <h3>Kulturklub</h3>
+        <p>Bilder von den Maibaum- und Erntefesten.</p>
+        <div class="timeline" style="grid-template-columns:1fr 1fr">
+          <a href="https://fkb-helau.de/maibaumfest26.htm"><strong>Maibaum 26</strong></a>
+          <a href="https://fkb-helau.de/erntefest25-a.htm"><strong>Erntefest 26</strong></a>
+          <a href="https://fkb-helau.de/maibaumfest25.htm"><strong>Maibaum 25</strong></a>
+          <a href="https://fkb-helau.de/erntefest25.htm"><strong>Erntefest 25</strong></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rückblicke</h2>
+    <div class="timeline">
+      <a href="https://fkb-helau.de/kapp%2024.htm"><small>Nov 2024</small><strong>Kappenfest 2024</strong></a>
+      <a href="https://fkb-helau.de/fasching23.htm"><small>Feb 2023</small><strong>Faschingsparty 2023</strong></a>
+      <a href="https://fkb-helau.de/kappenfest%202022.htm"><small>Nov 2022</small><strong>Kappenfest 2022</strong></a>
+      <a href="https://fkb-helau.de/maibaumfasching.htm"><small>Mai 2022</small><strong>Maibaum-Fasching 2022</strong></a>
+      <a href="https://fkb-helau.de/partys%204.htm"><small>2014 – 2019</small><strong>Unsere Veranstaltungen</strong></a>
+      <a href="https://fkb-helau.de/35%20jahre.htm"><small>Jubiläum</small><strong>35 Jahre FKB</strong></a>
+      <a href="https://fkb-helau.de/40%20jahre%201.htm"><small>Jubiläum</small><strong>40 Jahre FKB</strong></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">2024</span>
+        <h3>„45 Jahre FKB“</h3>
+        <p>Die für den 03. + 04. Februar 2024 geplanten Faschingsveranstaltungen sowie der Kinderfasching am 10. Februar im Schmiedestern konnten leider nicht stattfinden. Eine kleine interne Feier fand im Jugendclub statt. Zum Maibaumfest am 30. April holten wir unsere Kostüme heraus und starteten da ein kleines Faschingsprogramm!</p>
+      </article>
+      <aside class="card">
+        <span class="tag">Archiv</span>
+        <h3>Alte Webseite</h3>
+        <p>Unser Archivmaterial auf der alten Webseite.</p>
+        <a class="link" href="http://fkb-helau.de/Fa_old_archiv/html/verein.html">Vereinsleben bis ca. 2005 →</a><br>
+        <a class="link" href="http://fkb-helau.de/Fa_old_archiv/html/programme.html">Partys 1–3 (1999–2014) →</a>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="insta">
+      <div><h2>Aktuelles auf Instagram</h2><p>Neues vom FKB und Kulturklub: @fkb.helau</p></div>
+      <a class="btn" href="https://www.instagram.com/fkb.helau/">Folgen</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>© Faschingsklub Berthelsdorf · Kulturverein der Gemeinde Weißenborn · gegründet 1979</span>
+  <span><a href="https://fkb-helau.de/Kontakt.htm">Kontakt</a> · <a href="https://fkb-helau.de/dsgvo%201.htm">Datenschutz</a></span>
+</div></footer>
+<script>
+const b=document.getElementById('menu'),l=document.getElementById('links');
+b.onclick=()=>{const o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+</script>
+</body>
+</html>
